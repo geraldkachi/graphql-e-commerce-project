@@ -12,13 +12,14 @@ import CheckoutPage from './pages/checkout/checkout.component';
 
 // import Header from './components/header/header.component';
 import {default as Header} from './components/header/HeaderContainerGql';
-                         //  OR
+ //  OR
 // import HeaderContainer from './components/header/HeaderContainerGql'
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
+import Error from './pages/errror/Error';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -57,14 +58,9 @@ class App extends React.Component {
           <Route
             exact
             path='/signin'
-            render={() =>
-              this.props.currentUser ? (
-                <Redirect to='/' />
-              ) : (
-                <SignInAndSignUpPage />
-              )
-            }
-          />
+            render={() => this.props.currentUser ? ( <Redirect to='/' /> ) : (<SignInAndSignUpPage /> )} />
+            <Route component={Error} />
+            <Redirect to="/Error" />
         </Switch>
       </div>
     );
