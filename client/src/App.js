@@ -10,8 +10,8 @@ import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 
-// import Header from './components/header/header.component';
 import {default as Header} from './components/header/HeaderContainerGql';
+// import Header from './components/header/header.component';
  //  OR
 // import HeaderContainer from './components/header/HeaderContainerGql'
 
@@ -55,12 +55,9 @@ class App extends React.Component {
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
           <Route exact path='/checkout' component={CheckoutPage} />
-          <Route
-            exact
-            path='/signin'
-            render={() => this.props.currentUser ? ( <Redirect to='/' /> ) : (<SignInAndSignUpPage /> )} />
-            <Route component={Error} />
-            <Redirect to="/Error" />
+          <Route exact path='/signin' render={() => this.props.currentUser ? ( <Redirect to='/' /> ) : (<SignInAndSignUpPage /> )} />
+          <Route component={Error} />
+          <Redirect to="/Error" />
         </Switch>
       </div>
     );

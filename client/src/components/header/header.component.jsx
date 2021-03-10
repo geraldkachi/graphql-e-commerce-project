@@ -4,8 +4,11 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { auth } from '../../firebase/firebase.utils';
+
+// import  CartIcon from '../cart-icon/cart-icon.component';
 import {default as CartIcon} from '../cart-icon/CartIconContainerGql';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+
+import { default as  CartDropdown} from '../cart-dropdown/CartDropDwomContainerGql';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 

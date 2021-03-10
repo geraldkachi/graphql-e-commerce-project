@@ -8,7 +8,7 @@ const Error = () => {
     <Fragment>
       <Hero>
         <Banner title="404" subtitle="page not found">
-          <Link to="/" className="btn-primary">
+          <Link to="/" className="" style={{color:'red'}}>
             return home
           </Link>
         </Banner>
@@ -20,8 +20,6 @@ const Error = () => {
 //   height: "80hv",
 // };
 
-
-////////
 const Banner = ({ children, title, subtitle }) => {
     return (
       <Fragment>
@@ -35,13 +33,14 @@ const Banner = ({ children, title, subtitle }) => {
     );
   };
 
-////////////
-  const Hero = ({ children, hero }) => (
+
+const Hero = ({ children, hero }) => (
     <header className={hero}>{children}</header>
   );
   
   Hero.defaultProps = {
     hero: "defaultHero",
   };
+
 
 export default Error;
