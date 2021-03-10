@@ -21,9 +21,9 @@ const GET_COLLECTON_BY_TITLE = gql`
 `
 const CollectionPageContainerGql = ({ match }) => (
     <Query query={GET_COLLECTON_BY_TITLE} variables={{ title: match.params.collectionId }}>
-        {({ loading, data: { getCollectionByTitle }}) => {
+        {({ loading, data: { getCollectionsByTitle } }) => {
             if (loading)  return <Spinner />
-                return <CollectionPage collection={getCollectionByTitle} />
+                return <CollectionPage collection={getCollectionsByTitle} />
         } }
     </Query>
 )
