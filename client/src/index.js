@@ -35,7 +35,7 @@ client.writeData({
     cartItems: [],
     itemCount: 0
   }
-})
+}) 
 
 // client.query({
 //   query: gql`

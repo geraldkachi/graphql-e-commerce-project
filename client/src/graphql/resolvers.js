@@ -4,7 +4,7 @@ import { addItemToCart, getCartItemCount } from './cart.utils'
 export const typeDefs = gql`
     extend type Mutation {
         ToggleCartHidden: Boolean!
-        AddItemToCart(item: Itme!): [Item]!
+        AddItemToCart(item: Item!): [Item]!
     }
 
     extend type Item {
