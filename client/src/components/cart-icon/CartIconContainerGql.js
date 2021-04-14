@@ -1,6 +1,6 @@
 import React from "react";
+// import { compose , graphql } from "react-apollo";
 import { Mutation, Query } from "react-apollo";
-// import { Mutation, Query } from "react-apollo";
 import { gql } from "apollo-boost";
 // import Spinner from '../spinner/Spinner'
 
@@ -19,6 +19,12 @@ const GET_ITEM_COUNT = gql`
   }
 `;
 
+// using compose, HOC
+// const CartIconContainer = ({data: { itemCount }, toggleCartHidden}) => (
+//           <CartIcon toggleCartHidden={toggleCartHidden} itemCount={itemCount} />
+      
+// );
+
 const CartIconContainer = () => (
   <Query query={GET_ITEM_COUNT}>
     {({ data: { itemCount } }) => (
@@ -31,22 +37,11 @@ const CartIconContainer = () => (
   </Query>
 );
 
-export default CartIconContainer;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default CartIconContainer
+// export default compose(
+//   graphql(GET_ITEM_COUNT),
+//   graphql(TOGGLE_CART_HIDDEN, {name: 'toggleCartHidden' }),
+// )(CartIconContainer);
 
 // import React from "react";
 
@@ -92,8 +87,6 @@ export default CartIconContainer;
 //   }
 // `;
 
-
-
 // const CartIconContainer = () => (
 // <Query query={GET_ITEM_COUNT}>
 //   {({ data: { itemCount } }) => (
@@ -103,10 +96,9 @@ export default CartIconContainer;
 //       )}
 //     </Mutation>
 //   )}
-// </Query>; 
+// </Query>;
 //  )
 
 // export default CartIconContainer;
-
 
 // compose is not impoet from 'react-apollo'
