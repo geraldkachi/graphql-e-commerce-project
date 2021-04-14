@@ -5,7 +5,7 @@ import CollectionPage from './collection.component'
 import Spinner from '../../components/spinner/Spinner'
 
 
-const GET_COLLECTON_BY_TITLE = gql`
+const GET_COLLECTiON_BY_TITLE = gql`
     query getCollectionsByTitle($title: String!) {
         getCollectionsByTitle(title: $title) {
             id 
@@ -20,7 +20,7 @@ const GET_COLLECTON_BY_TITLE = gql`
     }
 `
 const CollectionPageContainerGql = ({ match }) => (
-    <Query query={GET_COLLECTON_BY_TITLE} variables={{ title: match.params.collectionId }}>
+    <Query query={GET_COLLECTiON_BY_TITLE} variables={{ title: match.params.collectionId }}>
         {({ loading, data: { getCollectionsByTitle } }) => {
             if (loading)  return <Spinner />
                 return <CollectionPage collection={getCollectionsByTitle} />
